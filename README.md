@@ -70,7 +70,6 @@ This allows the application to provide a consistent experience on desktop, table
 
 
 ## 📄 License
-This project was created for educational and internship purposes.
 
 This project was created for **educational and internship purposes**.
 
