@@ -1,0 +1,231 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #eef1f0;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2.5rem;
+  background: #14453f;
+  color: white;
+}
+
+.navbar h1 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.navbar nav a {
+  color: white;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.navbar nav a:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ===== Grid layout ===== */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 3rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: center;
+  }
+}
+
+/* ===== Cards ===== */
+.todo-app,
+.contact-form {
+  background: #f4f2ee;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.todo-app h2,
+.contact-form h2 {
+  margin-top: 0;
+  color: #14453f;
+  font-size: 1.6rem;
+}
+
+/* ===== Inputs (pill style) ===== */
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  border: 1.5px solid #cfd3d0;
+  border-radius: 999px;
+  padding: 0.9rem 1.3rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  outline: none;
+  background: white;
+  transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #14453f;
+}
+
+textarea {
+  border-radius: 20px;
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* ===== To-do input row ===== */
+#todo-form {
+  display: flex;
+  gap: 0.75rem;
+}
+
+#todo-form input {
+  margin-bottom: 0;
+  flex: 1;
+}
+
+/* ===== Buttons (pill style) ===== */
+button {
+  border: none;
+  border-radius: 999px;
+  padding: 0.9rem 1.6rem;
+  background: #14453f;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+button:hover {
+  background: #1d5c53;
+}
+
+/* ===== To-do list items ===== */
+#todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0;
+}
+
+#todo-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  background: white;
+  border-radius: 999px;
+  padding: 0.8rem 1.2rem;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Circle checkbox */
+.check-circle {
+  display: inline-block;
+  /* was missing effectively */
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  /* prevents flex from stretching it */
+  min-height: 20px;
+  border: 2px solid #14453f;
+  border-radius: 50%;
+  cursor: pointer;
+  flex: 0 0 20px;
+  /* locks size inside the flex row */
+  box-sizing: border-box;
+  background: white;
+}
+
+.check-circle.checked {
+  background: #14453f;
+}
+
+#todo-list li span {
+  flex: 1;
+  color: #333;
+}
+
+#todo-list li span.done {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.remove-btn {
+  background: none;
+  color: #14453f;
+  padding: 0.3rem;
+  font-size: 1.1rem;
+}
+
+.remove-btn:hover {
+  background: none;
+  color: #b33;
+}
+
+/* ===== Messages ===== */
+.error {
+  color: #d33;
+  font-size: 0.8rem;
+  display: block;
+  margin: 0.3rem 0 0.8rem 1rem;
+  /* removed the negative margin */
+}
+
+input[type="date"] {
+  width: 100%;
+  border: 1.5px solid #cfd3d0;
+  border-radius: 999px;
+  padding: 0.9rem 1.3rem;
+  margin-bottom: 0.3rem;
+  /* smaller since error now has its own top margin */
+  font-size: 0.95rem;
+  background: white;
+  outline: none;
+  color: #333;
+}
+
+input[type="date"]:focus {
+  border-color: #14453f;
+}
+
+/* Style the little calendar icon to match your teal theme */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(20%) sepia(30%) saturate(1000%) hue-rotate(130deg);
+  cursor: pointer;
+}
